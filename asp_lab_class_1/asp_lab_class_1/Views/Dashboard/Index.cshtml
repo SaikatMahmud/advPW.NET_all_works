@@ -1,0 +1,28 @@
+﻿@model IEnumerable<asp_lab_class_1.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_loggedLayout.cshtml";
+}
+
+<h2>Dashboard Index</h2>
+<span class="alert alert-success">@TempData["msg"]</span>
+
+
+@*<table class="table">
+    <tr>
+        <th>Student list</th>
+    </tr>
+
+    @foreach (var std in)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }*@
+
+</table>
