@@ -1,4 +1,4 @@
-﻿@model IEnumerable<asp_lab_class_1.Models.Student>
+﻿@*@model IEnumerable<asp_lab_class_1.Models.Student>*@
 
 @{
     ViewBag.Title = "Index";
@@ -9,20 +9,18 @@
 <span class="alert alert-success">@TempData["msg"]</span>
 
 
-@*<table class="table">
+<table class="table">
     <tr>
         <th>Student list</th>
     </tr>
 
-    @foreach (var std in)
+    @foreach (var std in ViewBag.obj)
     {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+               @std
             </td>
         </tr>
-    }*@
+    }
 
 </table>

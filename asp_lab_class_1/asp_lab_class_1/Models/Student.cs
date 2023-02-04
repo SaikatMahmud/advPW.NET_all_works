@@ -7,21 +7,26 @@ namespace asp_lab_class_1.Models
 {
     public class Student
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id;
+        public string Name;
 
         public static void Main()
         {
-            Student[] students = new Student[2];
+            //Student[] students = new Student[2];
 
-            students[0] = new Student();
-            students[0].Id = 1;
-            students[0].Name = "John Doe";
+            //Student student = new Student();
+            //students[0] = student;
+            //students[0].Id = 1;
+            //students[0].Name = "John Doe";
 
-            students[1] = new Student();
-            students[1].Id = 2;
-            students[1].Name = "Jane Doe";
+            //students[1] = student;
+            //students[1].Id = 2;
+            //students[1].Name = "Jane Doe";
+
+
+       
         }
+     
     }
 
 

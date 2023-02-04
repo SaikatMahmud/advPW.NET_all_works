@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 
 
+
 namespace asp_lab_class_1.Controllers
 {
     public class StudentController : Controller
@@ -24,8 +25,7 @@ namespace asp_lab_class_1.Controllers
             return View();
         }
         public ActionResult LoginSubmit()
-        {
-           
+        {  
             TempData["msg"] = "Login Successfull";
             return RedirectToAction("Index", "Dashboard");
         }
