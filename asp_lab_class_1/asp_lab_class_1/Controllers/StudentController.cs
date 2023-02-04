@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 
 
-
-
 namespace asp_lab_class_1.Controllers
 {
     public class StudentController : Controller

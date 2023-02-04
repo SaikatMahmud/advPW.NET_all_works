@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace asp_lab_class_1.Models
+//namespace asp_lab_class_1.Controllers
 {
     public class Student
     {
