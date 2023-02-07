@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "StdList";
+}
+
+<h2>StdList</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Roll</th>
+    </tr>
+    @foreach (var item in ViewBag.stds)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Id</td>
+            <td>@item.Roll</td>
+        </tr>
+    }
+</table>
