@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Product</h2>
+<form action="" method="post">
+    <input type="hidden" name="ld" value="@Model.ld" />
+    Name:<input type="text" name="Name" value="@Model.Name" /><br />
+    Price :<input type="text" name="Price" value="@Model.Price" /><br />
+    Qty: <input type="number" name="Qty" value="@Model.Qty" /><br />
+    <input type="submit" class="btn btn-danger" />
+</form>
+
