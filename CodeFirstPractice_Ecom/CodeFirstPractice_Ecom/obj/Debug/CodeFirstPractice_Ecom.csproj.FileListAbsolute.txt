@@ -83,3 +83,4 @@ D:\A I U B\Adv .NET Git\myWorks\CodeFirstPractice_Ecom\CodeFirstPractice_Ecom\ob
 D:\A I U B\Adv .NET Git\myWorks\CodeFirstPractice_Ecom\CodeFirstPractice_Ecom\obj\Debug\CodeFirstPractice_Ecom.pdb
 D:\A I U B\Adv .NET Git\myWorks\CodeFirstPractice_Ecom\CodeFirstPractice_Ecom\obj\Debug\CodeFirstPractice_Ecom.Migrations.table_with_column.resources
 D:\A I U B\Adv .NET Git\myWorks\CodeFirstPractice_Ecom\CodeFirstPractice_Ecom\obj\Debug\CodeFirstPractice_Ecom.csproj.GenerateResource.cache
+D:\A I U B\Adv .NET Git\myWorks\CodeFirstPractice_Ecom\CodeFirstPractice_Ecom\obj\Debug\CodeFirstPractice_Ecom.Migrations.foreignKey_fixed.resources

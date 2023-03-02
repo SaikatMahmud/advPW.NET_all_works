@@ -141,6 +141,10 @@
     <Compile Include="Migrations\202303021741128_table_with_column.designer.cs">
       <DependentUpon>202303021741128_table_with_column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303022129430_foreignKey_fixed.cs" />
+    <Compile Include="Migrations\202303022129430_foreignKey_fixed.designer.cs">
+      <DependentUpon>202303022129430_foreignKey_fixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,6 +205,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303021741128_table_with_column.resx">
       <DependentUpon>202303021741128_table_with_column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303022129430_foreignKey_fixed.resx">
+      <DependentUpon>202303022129430_foreignKey_fixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
