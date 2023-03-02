@@ -8,6 +8,7 @@
     <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="ECom_asp_testModel.FK_Orders_Customers" FromRole="Customer" ToRole="Order" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -17,9 +18,107 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="CatId" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="ECom_asp_testModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="ProductOrders" Relationship="ECom_asp_testModel.FK_ProductOrders_Products" FromRole="Product" ToRole="ProductOrder" />
   </EntityType>
   <EntityContainer Name="ECom_asp_testEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Categories" EntityType="ECom_asp_testModel.Category" />
+    <EntitySet Name="Orders" EntityType="ECom_asp_testModel.Order" />
+    <EntitySet Name="ProductOrders" EntityType="ECom_asp_testModel.ProductOrder" />
+    <AssociationSet Name="FK_Products_Categories" Association="ECom_asp_testModel.FK_Products_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="ECom_asp_testModel.FK_Orders_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrders_Orders" Association="ECom_asp_testModel.FK_ProductOrders_Orders">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="ProductOrder" EntitySet="ProductOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrders_Products" Association="ECom_asp_testModel.FK_ProductOrders_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductOrder" EntitySet="ProductOrders" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="ECom_asp_testModel.FK_Products_Categories" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="CusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="ECom_asp_testModel.FK_Orders_Customers" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="ProductOrders" Relationship="ECom_asp_testModel.FK_ProductOrders_Orders" FromRole="Order" ToRole="ProductOrder" />
+  </EntityType>
+  <EntityType Name="ProductOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="ECom_asp_testModel.FK_ProductOrders_Orders" FromRole="ProductOrder" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="ECom_asp_testModel.FK_ProductOrders_Products" FromRole="ProductOrder" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Products_Categories">
+    <End Type="ECom_asp_testModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="ECom_asp_testModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Type="ECom_asp_testModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="ECom_asp_testModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrders_Orders">
+    <End Type="ECom_asp_testModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="ECom_asp_testModel.ProductOrder" Role="ProductOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductOrder">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrders_Products">
+    <End Type="ECom_asp_testModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="ECom_asp_testModel.ProductOrder" Role="ProductOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="ProductOrder">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

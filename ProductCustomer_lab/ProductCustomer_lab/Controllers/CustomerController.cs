@@ -15,6 +15,7 @@ namespace ProductCustomer_lab.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(Customer cus)
         {

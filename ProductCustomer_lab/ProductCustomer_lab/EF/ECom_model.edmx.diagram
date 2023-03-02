@@ -5,8 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="796f80893a33454b9eb8eb46a61bc2f0" Name="Diagram1">
-        <EntityTypeShape EntityType="ECom_asp_testModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ECom_asp_testModel.Product" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECom_asp_testModel.Customer" Width="1.5" PointX="9.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECom_asp_testModel.Product" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECom_asp_testModel.Category" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ECom_asp_testModel.Order" Width="1.5" PointX="6.5" PointY="4.125" />
+        <EntityTypeShape EntityType="ECom_asp_testModel.ProductOrder" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="ECom_asp_testModel.FK_Products_Categories" />
+        <AssociationConnector Association="ECom_asp_testModel.FK_Orders_Customers" />
+        <AssociationConnector Association="ECom_asp_testModel.FK_ProductOrders_Orders" />
+        <AssociationConnector Association="ECom_asp_testModel.FK_ProductOrders_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

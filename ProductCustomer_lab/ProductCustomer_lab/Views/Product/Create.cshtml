@@ -9,5 +9,11 @@
     Name:<input type="text" name="Name" value="" /><br />
     Price :<input type="text" name="Price" value="" /><br />
     Qty: <input type="number" name="Qty" value="" /><br />
+    Category:<select name="CatId">
+    @foreach (var item in Model)
+    {
+        <option value=@item.Id>@item.CatName</option>
+    }
+</select>
     <input type="submit" class="btn btn-danger" />
 </form>

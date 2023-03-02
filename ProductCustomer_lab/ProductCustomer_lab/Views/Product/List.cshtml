@@ -9,6 +9,7 @@
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Category</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -16,6 +17,7 @@
             <td>@item.Name</td>
             <td>@item.Price</td>
             <td>@item.Qty</td>
+            <td>@item.Category.CatName</td>
             <td><a href="/Product/Edit/@item.ld">Edit</a></td>
             <td><a href="/Product/Delete/@item.ld">Delete</a></td>
         </tr>

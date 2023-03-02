@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Order List</h2>
+<table class="table">
+    <tr>
+        <th>Order No #</th>
+        <th>Order Amount</th>
+        <th>Customer Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Amount</td>
+            <td>@item.Customer.Name</td>
+            <td><a href="/Order/Details/@item.Id">Details</a></td>
+        </tr>
+    }
+</table>
+

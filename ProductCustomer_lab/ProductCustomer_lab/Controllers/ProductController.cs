@@ -12,8 +12,10 @@ namespace ProductCustomer_lab.Controllers
         // GET: Product
         [HttpGet]
         public ActionResult Create()
-        {   
-            return View();
+        {
+            var db = new ECom_asp_testEntities();
+            var cat = (from c in db.Categories select c).ToList();
+            return View(cat);
         }
         [HttpPost]
         public ActionResult Create(Product pd)

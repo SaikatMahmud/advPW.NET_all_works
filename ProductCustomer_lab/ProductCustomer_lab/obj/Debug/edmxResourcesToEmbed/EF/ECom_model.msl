@@ -14,10 +14,37 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ECom_asp_testModel.Product">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
           <ScalarProperty Name="ld" ColumnName="ld" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ECom_asp_testModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ECom_asp_testModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="CusId" ColumnName="CusId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductOrders">
+      <EntityTypeMapping TypeName="ECom_asp_testModel.ProductOrder">
+        <MappingFragment StoreEntitySet="ProductOrders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

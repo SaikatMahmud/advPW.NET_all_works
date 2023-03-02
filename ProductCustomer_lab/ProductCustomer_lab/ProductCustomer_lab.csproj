@@ -129,7 +129,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="EF\Category.cs">
+      <DependentUpon>ECom_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\Customer.cs">
       <DependentUpon>ECom_model.tt</DependentUpon>
     </Compile>
@@ -148,7 +153,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ECom_model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EF\Order.cs">
+      <DependentUpon>ECom_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\Product.cs">
+      <DependentUpon>ECom_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductOrder.cs">
       <DependentUpon>ECom_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -212,10 +223,13 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\List.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Order\List.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -12,20 +12,20 @@ namespace ProductCustomer_lab.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Order()
         {
-            this.Orders = new HashSet<Order>();
+            this.ProductOrders = new HashSet<ProductOrder>();
         }
     
         public int Id { get; set; }
-        public string Phone { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
+        public double Amount { get; set; }
+        public int CusId { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }

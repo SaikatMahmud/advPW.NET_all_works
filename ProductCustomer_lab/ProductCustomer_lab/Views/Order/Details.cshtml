@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Order Details</h2>
+<table class="table">
+    <tr>
+        <th>Product</th>
+        <th>Product Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Product.Price</td>
+        </tr>
+    }
+</table>
+<b>Product count: @Model.Count</b>

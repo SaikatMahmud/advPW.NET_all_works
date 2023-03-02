@@ -11,17 +11,23 @@ namespace ProductCustomer_lab.EF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Product
     {
-        [Required]
-        public int ld { get; set; } //spelling mistake Ld
-        [Required]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.ProductOrders = new HashSet<ProductOrder>();
+        }
+    
+        public int ld { get; set; }
         public string Name { get; set; }
-        [Required]
         public double Price { get; set; }
-        [Required]
         public int Qty { get; set; }
+        public Nullable<int> CatId { get; set; }
+    
+        public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }
