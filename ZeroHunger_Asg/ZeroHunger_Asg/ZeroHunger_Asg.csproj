@@ -127,23 +127,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Auth\Logged.cs" />
+    <Compile Include="Auth\RestaurantAccess.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="EF\Models\Admin.cs" />
     <Compile Include="EF\Models\Food.cs" />
     <Compile Include="EF\Models\Restaurant.cs" />
-    <Compile Include="EF\Models\Staff.cs" />
+    <Compile Include="EF\Models\User.cs" />
     <Compile Include="EF\ZeroHungerDb.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303192030300_table_add.cs" />
-    <Compile Include="Migrations\202303192030300_table_add.designer.cs">
-      <DependentUpon>202303192030300_table_add.cs</DependentUpon>
+    <Compile Include="Migrations\202303201716527_table_update11.cs" />
+    <Compile Include="Migrations\202303201716527_table_update11.designer.cs">
+      <DependentUpon>202303201716527_table_update11.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303192118502_table_add1.cs" />
-    <Compile Include="Migrations\202303192118502_table_add1.designer.cs">
-      <DependentUpon>202303192118502_table_add1.cs</DependentUpon>
+    <Compile Include="Migrations\202303201905316_datetimeUpdate.cs" />
+    <Compile Include="Migrations\202303201905316_datetimeUpdate.designer.cs">
+      <DependentUpon>202303201905316_datetimeUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
@@ -182,11 +183,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Reg.cshtml" />
+    <Content Include="Views\Food\RestaurantDashboard.cshtml" />
+    <Content Include="Views\Food\UserDashboard.cshtml" />
+    <Content Include="Views\Food\PlaceCollectionRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -205,11 +206,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303192030300_table_add.resx">
-      <DependentUpon>202303192030300_table_add.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303201716527_table_update11.resx">
+      <DependentUpon>202303201716527_table_update11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303192118502_table_add1.resx">
-      <DependentUpon>202303192118502_table_add1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303201905316_datetimeUpdate.resx">
+      <DependentUpon>202303201905316_datetimeUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

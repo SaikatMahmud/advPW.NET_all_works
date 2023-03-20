@@ -4,11 +4,16 @@
 }
 
 <h2>Welcome to ZeroHunger</h2>
+@if (TempData["Msg"] != null)
+{
+    <p class="alert alert-danger text-center">@TempData["Msg"]</p>
+}
+
 <form action="" method="post">
-    Username: <input type="text" name="Username" value="" class="form-control"/>
-      <span class="text-danger">@Html.ValidationMessage("Username")</span><br />
+    Username: <input type="text" name="Username" value="" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Username")</span><br />
     Password: <input type="text" name="Password" value="" class="form-control" />
-  <span class="text-danger">@Html.ValidationMessage("Password")</span><br />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span><br />
     <input type="submit" value="Login" class="btn btn-success" />
 </form>
 <a href="/User/Reg">New Supplier? Register Here</a>

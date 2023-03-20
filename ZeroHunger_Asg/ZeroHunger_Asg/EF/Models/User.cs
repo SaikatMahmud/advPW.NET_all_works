@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ZeroHunger_Asg.EF.Models
 {
-    public class Staff
+    public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace ZeroHunger_Asg.EF.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public ICollection<Food> Foods { get; set; }
-        public Staff()
+        public User()
         {
             Foods = new List<Food>();
         }

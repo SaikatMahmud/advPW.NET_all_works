@@ -17,13 +17,13 @@ namespace ZeroHunger_Asg.EF.Models
         public string Status { get; set; }
         public int PreserveTime { get; set; }
         public string DistributedOn { get; set; }
-        public DateTime DistributeTime { get; set; }
+        public DateTime? DistributeTime { get; set; }
         [ForeignKey("CollectionStaff")]
         public int? CollectionStaffId { get; set; }
         [ForeignKey("DistributeStaff")]
         public int? DistributeStaffId { get; set; }
-        public virtual Staff CollectionStaff { get; set; }
-        public virtual Staff DistributeStaff { get; set; }
+        public virtual User CollectionStaff { get; set; }
+        public virtual User DistributeStaff { get; set; }
         public virtual Restaurant Restaurant { get; set; }
     }
 }

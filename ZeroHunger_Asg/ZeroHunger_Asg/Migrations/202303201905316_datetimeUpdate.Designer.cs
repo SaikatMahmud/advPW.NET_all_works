@@ -7,13 +7,13 @@ namespace ZeroHunger_Asg.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class table_add : IMigrationMetadata
+    public sealed partial class datetimeUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(table_add));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(datetimeUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303192030300_table_add"; }
+            get { return "202303201905316_datetimeUpdate"; }
         }
         
         string IMigrationMetadata.Source

@@ -19,6 +19,38 @@ namespace ZeroHunger_Asg.Controllers
         [HttpPost]
         public ActionResult Login(Login obj)
         {
+            if (ModelState.IsValid)
+            {
+                var db = new ZeroHungerDb();
+                var user = (from u in db.Users
+                            where u.Username.Equals(obj.Username) && u.Password.Equals(obj.Password)
+                            select u).SingleOrDefault();
+                var restaurant = (from r in db.Restaurants
+                                  where r.Username.Equals(obj.Username) && r.Password.Equals(obj.Password)
+                                  select r).SingleOrDefault();
+                if (user != null)
+                {
+                    Session["user"] = user;
+                    var retUrl = Request["ReturnUrl"];
+                    if (retUrl != null)
+                    {
+                        return Redirect(retUrl);
+                    }
+                    return RedirectToAction("UserDashboard", "Food");
+                }
+                if (restaurant != null)
+                {
+                    Session["restaurant"] = restaurant;
+                    var retUrl = Request["ReturnUrl"];
+                    if (retUrl != null)
+                    {
+                        return Redirect(retUrl);
+                    }
+                    return RedirectToAction("RestaurantDashboard", "Food");
+                }
+                TempData["Msg"] = "Username Password invalid";
+            }
+
             return View(obj);
         }
         [HttpGet]
@@ -29,9 +61,9 @@ namespace ZeroHunger_Asg.Controllers
         [HttpPost]
         public ActionResult Reg(Restaurant obj)
         {
-            var db = new ZeroHungerDb();
             if (ModelState.IsValid)
             {
+                var db = new ZeroHungerDb();
                 db.Restaurants.Add(obj);
                 db.SaveChanges();
                 return RedirectToAction("Login");
