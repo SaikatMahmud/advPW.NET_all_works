@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "RestaurantHistory";
+}
+@*@model ZeroHunger_Asg.EF.Models.Restaurant*@
+
+
+
+<h2>Contribution History for</h2>
+<table class="table">
+    <tr>
+        <th>Requested On</th>
+        <th>Food Type</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Distribution Place</th>
+    </tr>
+    @foreach (var h in Model)
+    {
+        <tr>
+            <td>@h.RequestTime.ToString("yyyy-MM-dd")</td>
+            <td>@h.FoodType</td>
+            <td>@h.Quantity</td>
+            <td>@h.Status</td>
+            <td>@h.DistributedOn</td>
+        </tr>
+    }
+
+</table>
+

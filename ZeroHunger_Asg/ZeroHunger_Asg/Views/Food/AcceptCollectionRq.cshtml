@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "AcceptCollectionRq";
+}
+
+<h2>Pending Collection List</h2>
+<table class="table">
+    <tr>
+       <th>Restaurant Name</th>
+       <th>Request Date</th>
+       <th>Preserve Time</th>
+       <th>Food Type</th>
+       <th>Status</th>
+       <th>Address</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+    <tr>
+        <td>@f.Restaurant.Name</td>
+        <td>@f.RequestTime.ToString("yyyy-MM-dd")</td>
+        <td>@f.PreserveTime</td>
+        <td>@f.FoodType</td>
+        <td>@f.Status</td>
+        <td>@f.Restaurant.Address</td>
+    </tr>
+    }
+</table>
+

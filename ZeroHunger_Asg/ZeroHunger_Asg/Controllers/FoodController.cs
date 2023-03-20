@@ -38,11 +38,31 @@ namespace ZeroHunger_Asg.Controllers
                // Food f = new Food();
                 f.RestaurantId = res.Id;
                 f.RequestTime = DateTime.Now;
+                f.Status = "Pickup pending";
+                f.DistributedOn = "Not yet";
                 db.Foods.Add(f);
                 db.SaveChanges();
                 return RedirectToAction("RestaurantDashboard");
             }
             return View(f);
+        }
+        public ActionResult RestaurantHistory()
+        {
+            var db = new ZeroHungerDb();
+            var res = (Restaurant)Session["restaurant"];
+            var history = (from h in db.Foods
+                           where h.RestaurantId == res.Id
+                           select h).ToList();
+            return View(history);
+        }
+        public ActionResult AcceptCollectionRq()
+        {
+            var db = new ZeroHungerDb();
+            var pending = (from f in db.Foods
+                           where f.Status == "Pickup pending"
+                           select f).ToList();
+            return View(pending);
+
         }
     }
 }

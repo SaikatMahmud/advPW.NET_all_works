@@ -188,6 +188,8 @@
     <Content Include="Views\Food\RestaurantDashboard.cshtml" />
     <Content Include="Views\Food\UserDashboard.cshtml" />
     <Content Include="Views\Food\PlaceCollectionRequest.cshtml" />
+    <Content Include="Views\Food\RestaurantHistory.cshtml" />
+    <Content Include="Views\Food\AcceptCollectionRq.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

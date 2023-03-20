@@ -36,7 +36,10 @@ namespace ZeroHunger_Asg.Controllers
                     {
                         return Redirect(retUrl);
                     }
-                    return RedirectToAction("UserDashboard", "Food");
+                    if (user.Type.Equals("Admin"))
+                    {
+                    return RedirectToAction("AcceptCollectionRq", "Food");
+                    }
                 }
                 if (restaurant != null)
                 {
@@ -46,7 +49,7 @@ namespace ZeroHunger_Asg.Controllers
                     {
                         return Redirect(retUrl);
                     }
-                    return RedirectToAction("RestaurantDashboard", "Food");
+                    return RedirectToAction("PlaceCollectionRequest", "Food");
                 }
                 TempData["Msg"] = "Username Password invalid";
             }
