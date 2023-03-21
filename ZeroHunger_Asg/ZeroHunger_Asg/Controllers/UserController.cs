@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZeroHunger_Asg.Auth;
 using ZeroHunger_Asg.EF;
 using ZeroHunger_Asg.EF.Models;
 using ZeroHunger_Asg.Models;
@@ -38,7 +39,11 @@ namespace ZeroHunger_Asg.Controllers
                     }
                     if (user.Type.Equals("Admin"))
                     {
-                    return RedirectToAction("AcceptCollectionRq", "Food");
+                    return RedirectToAction("PendingList", "Food");
+                    }
+                    if (user.Type.Equals("Employee"))
+                    {
+                        return RedirectToAction("EmpDashboard");
                     }
                 }
                 if (restaurant != null)
@@ -75,7 +80,14 @@ namespace ZeroHunger_Asg.Controllers
         }
         public ActionResult Logout()
         {
+            Session["user"] = null;
+            Session["restaurant"] = null;
             return RedirectToAction("Login");
+        }
+        [EmployeeAccess]
+        public ActionResult EmpDashboard()
+        {
+            return View();
         }
     }
 }

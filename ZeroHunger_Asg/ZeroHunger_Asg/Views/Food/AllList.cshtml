@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AllList";
+}
+
+<h2>All Food List</h2>
+<button class="pull-right btn btn-warning"><a href="/User/Logout">Logout</a></button>
+
+<table class="table">
+    <tr>
+        <th>ID #</th>
+        <th>Restaurant Name</th>
+        <th>Request Time</th>
+        <th>Preserve Time (hour)</th>
+        <th>Food Type</th>
+        <th>Quantity (for person)</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td><a href="/Food/FullDetails/@f.Id">@f.Id</a></td>
+            <td>@f.Restaurant.Name</td>
+            <td>@f.RequestTime</td>
+            <td>@f.PreserveTime</td>
+            <td>@f.FoodType</td>
+            <td>@f.Quantity</td>
+            <td>@f.Status</td>
+
+        </tr>
+    }
+</table>

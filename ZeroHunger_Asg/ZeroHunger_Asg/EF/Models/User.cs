@@ -19,5 +19,6 @@ namespace ZeroHunger_Asg.EF.Models
         {
             Foods = new List<Food>();
         }
+
     }
 }

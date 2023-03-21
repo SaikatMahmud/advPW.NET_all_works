@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -127,6 +126,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth\AdminAccess.cs" />
+    <Compile Include="Auth\EmployeeAccess.cs" />
     <Compile Include="Auth\Logged.cs" />
     <Compile Include="Auth\RestaurantAccess.cs" />
     <Compile Include="Controllers\FoodController.cs" />
@@ -138,13 +139,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303201716527_table_update11.cs" />
-    <Compile Include="Migrations\202303201716527_table_update11.designer.cs">
-      <DependentUpon>202303201716527_table_update11.cs</DependentUpon>
+    <Compile Include="Migrations\202303211743465_FoodEdittest2.cs" />
+    <Compile Include="Migrations\202303211743465_FoodEdittest2.designer.cs">
+      <DependentUpon>202303211743465_FoodEdittest2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303201905316_datetimeUpdate.cs" />
-    <Compile Include="Migrations\202303201905316_datetimeUpdate.designer.cs">
-      <DependentUpon>202303201905316_datetimeUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202303211746260_FoodEdittest3.cs" />
+    <Compile Include="Migrations\202303211746260_FoodEdittest3.designer.cs">
+      <DependentUpon>202303211746260_FoodEdittest3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303211950478_lastChange.cs" />
+    <Compile Include="Migrations\202303211950478_lastChange.designer.cs">
+      <DependentUpon>202303211950478_lastChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303212004408_lastChange2.cs" />
+    <Compile Include="Migrations\202303212004408_lastChange2.designer.cs">
+      <DependentUpon>202303212004408_lastChange2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303212009153_lastChange3.cs" />
+    <Compile Include="Migrations\202303212009153_lastChange3.designer.cs">
+      <DependentUpon>202303212009153_lastChange3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
@@ -185,11 +198,18 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Reg.cshtml" />
-    <Content Include="Views\Food\RestaurantDashboard.cshtml" />
-    <Content Include="Views\Food\UserDashboard.cshtml" />
     <Content Include="Views\Food\PlaceCollectionRequest.cshtml" />
     <Content Include="Views\Food\RestaurantHistory.cshtml" />
+    <Content Include="Views\Food\PendingList.cshtml" />
     <Content Include="Views\Food\AcceptCollectionRq.cshtml" />
+    <Content Include="Views\Food\AllList.cshtml" />
+    <Content Include="Views\Food\FullDetails.cshtml" />
+    <Content Include="Views\Food\ToDistributeList.cshtml" />
+    <Content Include="Views\Food\AssignDistributor.cshtml" />
+    <Content Include="Views\User\EmpDashboard.cshtml" />
+    <Content Include="Views\Food\ToCollectListEmp.cshtml" />
+    <Content Include="Views\Food\ToDistributeListEmp.cshtml" />
+    <Content Include="Views\Food\AddDistributionPlace.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -208,11 +228,20 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303201716527_table_update11.resx">
-      <DependentUpon>202303201716527_table_update11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303211743465_FoodEdittest2.resx">
+      <DependentUpon>202303211743465_FoodEdittest2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303201905316_datetimeUpdate.resx">
-      <DependentUpon>202303201905316_datetimeUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303211746260_FoodEdittest3.resx">
+      <DependentUpon>202303211746260_FoodEdittest3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303211950478_lastChange.resx">
+      <DependentUpon>202303211950478_lastChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303212004408_lastChange2.resx">
+      <DependentUpon>202303212004408_lastChange2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303212009153_lastChange3.resx">
+      <DependentUpon>202303212009153_lastChange3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -248,10 +277,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

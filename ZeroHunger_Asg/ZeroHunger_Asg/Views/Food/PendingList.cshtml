@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "PendingList";
+}
+
+<h2>Pending Collection List</h2>
+<button class="pull-right btn btn-warning"><a href="/User/Logout">Logout</a></button>
+
+<button><a href="/Food/AllList">All List</a></button>
+<button><a href="/Food/ToDistributeList">To Distribute</a></button>
+
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Request Time</th>
+        <th>Preserve Time (hour)</th>
+        <th>Food Type</th>
+        <th>Quantity (for person)</th>
+        <th>Status</th>
+        <th>Address</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@f.Restaurant.Name</td>
+            <td>@f.RequestTime</td>
+            <td>@f.PreserveTime</td>
+            <td>@f.FoodType</td>
+            <td>@f.Quantity</td>
+            <td>@f.Status</td>
+            <td>@f.Restaurant.Address</td>
+            <td><a href="/Food/AcceptCollectionRq/@f.Id" class="btn btn-success">Accept</a></td>
+        </tr>
+    }
+</table>

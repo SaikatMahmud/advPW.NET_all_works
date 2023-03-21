@@ -3,14 +3,18 @@
 }
 @*@model ZeroHunger_Asg.EF.Models.Restaurant*@
 
+@{
+    var res = (ZeroHunger_Asg.EF.Models.Restaurant)Session["restaurant"];
+}
 
+<h2>Contribution History for @res.Name</h2>
+<button class="pull-right btn btn-warning"><a href="/User/Logout">Logout</a></button>
 
-<h2>Contribution History for</h2>
 <table class="table">
     <tr>
         <th>Requested On</th>
         <th>Food Type</th>
-        <th>Quantity</th>
+        <th>Quantity (for person)</th>
         <th>Status</th>
         <th>Distribution Place</th>
     </tr>

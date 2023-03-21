@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "ToCollectListEmp";
+}
+
+<h2>To Collect Food List for Employee</h2>
+<button class="pull-right btn btn-warning"><a href="/User/Logout">Logout</a></button>
+
+
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Request Time</th>
+        <th>Preserve Time (hour)</th>
+        <th>Food Type</th>
+        <th>Quantity (for person)</th>
+        <th>Address</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@f.Restaurant.Name</td>
+            <td>@f.RequestTime</td>
+            <td>@f.PreserveTime</td>
+            <td>@f.FoodType</td>
+            <td>@f.Quantity</td>
+            <td>@f.Restaurant.Address</td>
+            <td><a href="/Food/MarkAsCollected/@f.Id" class="btn btn-success">Mark as Collected</a></td>
+        </tr>
+    }
+</table>

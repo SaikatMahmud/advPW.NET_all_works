@@ -1,0 +1,21 @@
+﻿@model ZeroHunger_Asg.EF.Models.Food
+@{
+    ViewBag.Title = "FullDetails";
+}
+
+<h2>Details</h2>
+<button class="pull-right btn btn-warning"><a href="/User/Logout">Logout</a></button>
+
+<div>
+    Restaurant Name: @Model.Restaurant.Name <br />
+    Request Time: @Model.RequestTime <br />
+    Food Type: @Model.FoodType <br />
+    Quantity (for person): @Model.Quantity <br />
+    Status: @Model.Status <br />
+    Preserve Time (hour): @Model.PreserveTime <br />
+    Distribution Place: @Model.DistributedOn <br />
+    Distribuition Time: @Model.DistributeTime <br />
+    Food Collected By: @(Model.CollectionStaff == null ? "_" : Model.CollectionStaff.Name) <br />
+    Food Distributed By: @(Model.DistributeStaff == null ? "_": Model.DistributeStaff.Name)<br />
+</div>
+
