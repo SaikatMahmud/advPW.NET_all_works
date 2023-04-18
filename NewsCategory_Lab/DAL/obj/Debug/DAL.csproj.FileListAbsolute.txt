@@ -1,0 +1,13 @@
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\DAL\bin\Debug\DAL.dll.config
+C:\Users\Administrator\source\DAL\bin\Debug\DAL.dll
+C:\Users\Administrator\source\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrator\source\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\source\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\source\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\source\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.dll
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.Migrations.db_create.resources
+C:\Users\Administrator\source\DAL\obj\Debug\DAL.csproj.GenerateResource.cache

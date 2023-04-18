@@ -21,7 +21,8 @@
     @foreach (var h in Model)
     {
         <tr>
-            <td>@h.RequestTime.ToString("yyyy-MM-dd")</td>
+            @*<td>@h.RequestTime.ToString("yyyy-MM-dd")</td>*@
+            <td>@h.RequestTime</td>
             <td>@h.FoodType</td>
             <td>@h.Quantity</td>
             <td>@h.Status</td>
